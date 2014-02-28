@@ -1,7 +1,7 @@
 package twitter
 
 import (
-	"container/list"
+	"encoding/json"
 )
 
 type Tweet struct {
@@ -50,8 +50,12 @@ type Tweet struct {
 	} `json:"user"`
 }
 
-func StreamJSONtoTweet(line []byte) Tweet {
+func JSONtoTweet(line []byte) Tweet {
 	var t Tweet
 	json.Unmarshal(line, &t)
 	return t
+}
+
+func TweetToJSON(tweet Tweet) ([]byte, error) {
+	return json.Marshal(&tweet)
 }
