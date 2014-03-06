@@ -48,6 +48,7 @@ type Tweet struct {
 		Created_at              string
 		Id                      uint64
 	} `json:"user"`
+	Retween bool
 }
 
 func JSONtoTweet(line []byte) Tweet {
