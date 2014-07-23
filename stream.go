@@ -5,6 +5,7 @@ import (
 	"github.com/mrjones/oauth"
 )
 
+// Fills a channel with data from the Twitter gardenhose.
 func FillStream(channel chan Tweet, consumerKey, consumerSecret, ot, osec string) {
 	httpstream.OauthCon = oauth.NewConsumer(
 		consumerKey,

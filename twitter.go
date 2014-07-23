@@ -10,7 +10,7 @@ type Tweet struct {
 	Coordinates    interface{} `json:"coordinates"`
 	Created_at_str string      `json:"created_at"`
 	Lang           string      `json:"lang"`
-	Timestamp      uint64
+	Timestamp      int64
 	Entities       struct {
 		Hashtags []struct {
 			Text    string
@@ -51,12 +51,14 @@ type Tweet struct {
 	Retween bool
 }
 
+// Converts a Twitter JSON object into a Tweet struct
 func JSONtoTweet(line []byte) Tweet {
 	var t Tweet
 	json.Unmarshal(line, &t)
 	return t
 }
 
+// Converts a Tweet struct into a Twitter JSON object
 func TweetToJSON(tweet Tweet) ([]byte, error) {
 	return json.Marshal(&tweet)
 }
