@@ -6,6 +6,8 @@ The following packages are required:
  - github.com/mrjones/oauth
  - github.com/araddon/httpstream
 
+Required packages can be installed using `go get packagepath`
+
 ## Getting started
 To fill a channel with data from the Twitter firehose:
 
