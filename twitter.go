@@ -48,7 +48,7 @@ type Tweet struct {
 		Created_at              string
 		Id                      uint64
 	} `json:"user"`
-	Retween bool
+	Retweeted_status interface{}
 }
 
 // Converts a Twitter JSON object into a Tweet struct
